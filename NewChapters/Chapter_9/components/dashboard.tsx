@@ -8,6 +8,7 @@ import { StatCards } from "@/components/stat-cards"
 import { CategoryFilter } from "@/components/category-filter"
 import { MetricLineChart } from "@/components/metric-line-chart"
 import { formatValue } from "@/components/metric-line-chart"
+import { IngestionPanel } from "@/components/ingestion-panel"
 
 export function Dashboard() {
   const [selectedCategory, setSelectedCategory] = useState("Revenue")
@@ -76,6 +77,11 @@ export function Dashboard() {
 
         {/* Line chart */}
         <MetricLineChart records={records} category={selectedCategory} />
+
+        {/* Ingestion panel */}
+        <div className="mt-6">
+          <IngestionPanel />
+        </div>
 
         {/* Recent records table */}
         <div className="mt-6 overflow-hidden rounded-xl border border-border bg-card">
